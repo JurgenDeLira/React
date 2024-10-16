@@ -1,53 +1,25 @@
 
+const average = 5.9;
 
-const invoice = {
-    id: 10,
-    name: 'Compras de oficina',
-    date: new Date(),
-    client: {
-        id: 2,
-        name: 'Jhon',
-        lastName: 'Doe',
-        age: 20,
-    },
-    items: [//Esto es un array
-        {//Esto es un objeto
-            product: 'keyboard',
-            price: 399,
-            quantity: 2,
-        },
-        {
-            product: 'mouse',
-            price: 200,
-            quantity: 1
-        },
-        {
-            product: 'paper',
-            price: 100,
-            quantity: 10
-        },
-    ],
-    total: function () {
-        let total = 0;
-        this.items.forEach(item => {
-            total = total + item.price*item.quantity;
-        });
-        return total;
-    },
-    greeting: function (){
-        return `Hola ${this.client.name}`; // el this no funciona en lambda
-        // en lambda o sea => tiene que ser invoice en vez de this 
-        //y en vez de function(){ esto () => {
-    }
-};
+let status2 = '';
+status2 = ( average >= 5.5) ? 'Aprobado' : 'Rechazado'; // el ? pregunta si se cumple
 
-// invoice.client.name= 'Pepe';
-//invoice.total = 5000;
 
-console.log(invoice);
+// seria por ejemplo parecido a un if:
+//if (average >= 5.5) {
+//    status2 = 'Aprobado';
+//}else{
+//    status2='Rechazado';
+//}
+console.log(`Resultado: ${status2}`);
 
-const greeting = invoice.greeting();
+let max = 0;
 
-console.log(greeting)
+const a = 5;
+const b = 8;
+const c = 12;
 
-console.log('Total: ' + invoice.total());
+max = a > b ? a : b;
+max = max > c ? max : c;
+
+console.log(`El número mayor es ${max}`)
