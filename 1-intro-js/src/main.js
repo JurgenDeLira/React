@@ -1,25 +1,14 @@
 
-const average = 5.9;
 
-let status2 = '';
-status2 = ( average >= 5.5) ? 'Aprobado' : 'Rechazado'; // el ? pregunta si se cumple
+const products = ['mesa', 'silla', 'notebook', 'teclado'];
 
+const products2 = products.concat(['pantalla lcd', 'sony tv']);
 
-// seria por ejemplo parecido a un if:
-//if (average >= 5.5) {
-//    status2 = 'Aprobado';
-//}else{
-//    status2='Rechazado';
-//}
-console.log(`Resultado: ${status2}`);
+const fruits = ['peras', 'manzanas', 'sandias', 'frutillas'];
 
-let max = 0;
+const mercado = [...products2, ...fruits, 'lechuga', 'papas', 'uvas']
 
-const a = 5;
-const b = 8;
-const c = 12;
+const mercado2 = products2.concat(fruits).concat('lechuga', 'papas', 'uvas');
 
-max = a > b ? a : b;
-max = max > c ? max : c;
-
-console.log(`El número mayor es ${max}`)
+console.log(products2);
+console.log(mercado2);
