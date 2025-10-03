@@ -1,3 +1,8 @@
+const paper = {
+    product: 'paper',
+    price: 100,
+    quantity: 10,
+}
 
 const invoices = [
     {
@@ -5,7 +10,7 @@ const invoices = [
     name: 'Compras de oficina',
     client: {
 
-        name: 'Jhon',
+        name: 'Maria',
         lastName: 'Doe',
 
         },
@@ -20,11 +25,7 @@ const invoices = [
                 price: 200,
                 quantity: 1
             },
-            {
-                product: 'paper',
-                price: 100,
-                quantity: 10
-            },
+            paper,
         ]
     },
         {
@@ -33,7 +34,7 @@ const invoices = [
      
         client: {
  
-            name: 'Jhon',
+            name: 'Pepe',
             lastName: 'Doe',
  
         },
@@ -71,16 +72,32 @@ const invoices = [
                 price: 50,
                 quantity: 1
             },
-            {
-                product: 'paper',
-                price: 100,
-                quantity: 10
-            },
+            paper,
         ]
     }
 ];
 
-const invoicesName = invoices.map( i => {
-    return i.name; 
-});
+const invoicesName = invoices.map( i => i.name);
+console.log(invoices)
 console.log(invoicesName)
+
+const invoicesClient = invoices.map( i => i.client.name);
+
+console.log(invoicesClient)
+
+const invoiceById = invoices.find( i=> i.name === 'Pepe')
+
+console.log(invoiceById)
+
+const invoiceFilter = invoices.filter( i => i.id > 1)
+console.log(invoiceFilter)
+
+console.log('filter eliminar')
+const invoiceDeleted = invoices.filter( i => i.id != 2)
+console.log(invoiceDeleted)
+
+const invoiceFilter2 = invoices.filter(i => i.items.includes(paper) )
+console.log(invoiceFilter2)
+
+const result = invoices.some(i => i.client.name === 'juan');
+console.log(result)
