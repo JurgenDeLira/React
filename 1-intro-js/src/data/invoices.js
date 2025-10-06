@@ -1,0 +1,82 @@
+export const paper = {
+    product: 'paper',
+    price: 100,
+    quantity: 10,
+}
+
+export const invoices = [
+    {
+    id: 1,
+    name: 'Compras de oficina',
+    client: {
+
+        name: 'Maria',
+        lastName: 'Doe',
+
+        },
+        items: [//Esto es un array
+            {//Esto es un objeto
+                product: 'keyboard',
+                price: 399,
+                quantity: 2,
+            },
+            {
+                product: 'mouse',
+                price: 200,
+                quantity: 1
+            },
+            paper,
+        ]
+    },
+        {
+        id: 2,
+        name: 'Compras de computación',
+     
+        client: {
+ 
+            name: 'Pepe',
+            lastName: 'Doe',
+ 
+        },
+        items: [//Esto es un array
+            {//Esto es un objeto
+                product: 'keyboard',
+                price: 399,
+                quantity: 2,
+            },
+            {
+                product: 'screen 17',
+                price: 800,
+                quantity: 1
+            },
+            {
+                product: 'cpu intel',
+                price: 1000,
+                quantity: 10
+            },
+        ]
+    },
+        {
+        id: 3,
+        name: 'Compras de papeleria',
+
+        client: {
+   
+            name: 'Jhon',
+            lastName: 'Doe',
+      
+        },
+        items: [//Esto es un array
+            {
+                product: 'pencil',
+                price: 50,
+                quantity: 1
+            },
+            paper,
+        ]
+    }
+];
+
+ export const invoiceByClientName = (clientName) => {
+    return invoices.find( i=> i.client.name === clientName);
+}
