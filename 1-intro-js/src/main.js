@@ -1,14 +1,14 @@
-import { findInvoiceById } from './data/invoices';
 
+const httpClient =  fetch('https://jsonplaceholder.typicode.com/users');
 
-findInvoiceById(3)
-    .then(console.log)
-    .catch(console.error);
+/*httpClient.then( response => {
+    response.json().then(data => {
+        console.log(data)
+    });
+});*/
 
-//promise.then((json) => {
-  //      console.log(json);
-    //    console.log('realizada con exito alguna tarea con demora.');
+httpClient
+    .then( response => response.json())
+    .then(data => console.log(data))
 
-//}).catch((error) => {
-  //  console.error(error)
-//});
+console.log('Hola que tal')
