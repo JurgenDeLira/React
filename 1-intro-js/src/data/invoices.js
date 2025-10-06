@@ -81,8 +81,14 @@ const invoiceByClientName = (clientName) => {
     return invoices.find( i=> i.client.name === clientName);
 }
 
+const invoiceById = (id) => {
+    return invoices.find( i=> i.id === id)
+
+}
+
 export {
     paper,
     invoices as default,
     invoiceByClientName,
+    invoiceById
 }
