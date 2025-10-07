@@ -4,6 +4,6 @@ import { CounterApp } from './CounterApp'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CounterApp />
+    <CounterApp value={ 7 }/>
   </StrictMode>,
 )
