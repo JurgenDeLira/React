@@ -1,9 +1,11 @@
-export function HelloWorld() {
+export const HelloWorld = ({user, id}) => {
+
+    //const name = 'Pepe';
 
     return (
         <>
             <h1>Hola Mundo</h1>
-            <div>que tal!</div>
+            <div>que tal! {user} con el id {id}</div>
         </>
     )
 };

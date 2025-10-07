@@ -5,7 +5,7 @@ import {HelloWorld} from './components/HelloWorld';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelloWorld/>
+    <HelloWorld user={'Juan'} id='1'/>
   </React.StrictMode>
   
 )
