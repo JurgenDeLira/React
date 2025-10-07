@@ -8,7 +8,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <HelloWorld 
     user={ {name: 'Pepe', lastName: 'Doe'}}
     id= {1}
-    title={ true }
+  
+    book = {'goso'}
     />
   </React.StrictMode>
   
