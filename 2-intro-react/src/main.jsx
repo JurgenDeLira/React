@@ -1,15 +1,15 @@
 import React from "react"
 import ReactDOM from 'react-dom/client'
-import {HelloWorld} from './components/HelloWorld';
+import {HelloWorldApp} from './HelloWorldApp';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelloWorld 
+    <HelloWorldApp 
     user={ {name: 'Pepe', lastName: 'Doe'}}
     id= {1}
-  
-    book = {'goso'}
+    title='Hola Mundo!'
+    book = {'UMI got a gota'}
     />
   </React.StrictMode>
   
