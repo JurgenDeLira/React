@@ -29,6 +29,25 @@ export const InvoiceApp = () => {
                 <li>{company.fiscalNumber}</li>
             </ul>
             <h4>Productos de la factura</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {items.map(({product, price, quantity}) => (
+                    <tr>
+                        <td>{product}</td>
+                        <td>{price}</td>
+                        <td>{quantity}</td>
+                    </tr>
+                    ))}
+                    
+                </tbody>
+            </table>
         </>
     )
 }
