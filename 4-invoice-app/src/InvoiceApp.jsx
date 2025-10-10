@@ -28,11 +28,22 @@ const invoiceInitial = {
     };
 
 export const InvoiceApp = () => {
+    
+    const [counter, setCounter] = useState(4);
 
     const [invoice, setInvoice] = useState(invoiceInitial);
 
     const [items, setItems] = useState([]);
 
+    const [formItemsState, setFormItemsState] = useState({
+        product: '',
+        price: '',
+        quantity: '',
+    });
+
+    const { total, id, name, client, company } = invoice;
+
+    const { product, price, quantity } = formItemsState;
 
     useEffect(() => {
         const data = getInvoice();
@@ -41,20 +52,21 @@ export const InvoiceApp = () => {
         setItems(data.items);
     }, []);
 
-    
+    useEffect(() => {
+        //console.log('El precio ha sido modificado')
+    }, [price]);
 
-    const { total, id, name, client, company, items: itemsInitial } = invoice;
+    useEffect(() => {
+        //console.log('El formItemsState ha sido modificado')
+    }, [formItemsState]);
 
-    const [formItemsState, setFormItemsState] = useState({
-        product: '',
-        price: '',
-        quantity: '',
-    });
+    useEffect(() => {
+        //console.log('El counter ha sido modificado')
+    }, [counter]);
 
-    const { product, price, quantity } = formItemsState;
-
-
-    const [counter, setCounter] = useState(4);
+    useEffect(() => {
+        console.log('Los items han sido modificados')
+    }, [items]);
 
     const onInputChange = ({ target: { name, value } }) => {
         //console.log(name);
