@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getInvoice } from "./services/getInvoice"
+import { getInvoice, calculateTotal } from "./services/getInvoice"
 import { ClientView } from "./components/ClientView";
 import { CompanyView } from "./components/CompanyView";
 import { InvoiceView } from "./components/InvoiceView";
@@ -28,7 +28,8 @@ const invoiceInitial = {
     };
 
 export const InvoiceApp = () => {
-    
+    const [ total, setTotal] = useState(0);
+
     const [counter, setCounter] = useState(4);
 
     const [invoice, setInvoice] = useState(invoiceInitial);
@@ -41,7 +42,7 @@ export const InvoiceApp = () => {
         quantity: '',
     });
 
-    const { total, id, name, client, company } = invoice;
+    const { id, name, client, company } = invoice;
 
     const { product, price, quantity } = formItemsState;
 
@@ -65,7 +66,8 @@ export const InvoiceApp = () => {
     }, [counter]);
 
     useEffect(() => {
-        console.log('Los items han sido modificados')
+        setTotal(calculateTotal(items));
+        //console.log('Los items han sido modificados')
     }, [items]);
 
     const onInputChange = ({ target: { name, value } }) => {
